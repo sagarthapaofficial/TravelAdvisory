@@ -25,10 +25,6 @@ app.use("/api/alerts", alertRouter.router);
 app.use(express.static("public"));
 
 //opens the server on port 5000
-app.listen(process.env.PORT || 5000, "0.0.0.0", (err, address) => {
-  if (err) {
-    express.log.error(err);
-    process.exit(1);
-  }
-  //console.log(`Listening on port ${config.port}`);
+app.listen(process.env.PORT || 5000, () => {
+  console.log(`Listening on port ${process.env.PORT}`);
 });
